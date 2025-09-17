@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Neural Sample-based Piano Synthesis</title>
+  <title>Parametric Generation of Impulse Responses for Audio Effects</title>
  <!--  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">-->
  <!--  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">-->
@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Neural Sample-based Piano Synthesis</h1>
+            <h1 class="title is-1 publication-title">Parametric Generation of Impulse Responses for Audio Effects</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -85,7 +85,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/RiccardoVib/NeuralSample-basedPiano" target="_blank"
+                    <a href="https://github.com/RiccardoVib/NIRGeneration" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -109,8 +109,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-Piano sound synthesis has been an active topic of research and development for several decades. Although comprehensive physics-based piano models have been proposed, sample-based piano emulation is still widely utilized for its computational efficiency and relative accuracy despite presenting significant memory storage requirements. This paper proposes a novel hybrid approach to sample-based piano synthesis aimed at improving the fidelity of sound emulation while reducing memory requirements for storing samples. A neural network-based model processes the sound recorded from a single piano key at a given velocity. The network is trained to learn the nonlinear relationship between the various velocities at which a piano key is pressed and the corresponding sound alterations. Results show that the method achieves high accuracy using a specific neural architecture that is computationally efficient, presenting few trainable parameters, and it requires memory only for one sample for each piano key.          </p>
-        </div>
+This paper introduces a novel method for modeling audio effects such as filters and reverbs by the parametric generation of their impulse responses. Experimental results demonstrate that our proposed method effectively models audio effects that conventional neural networks struggle to handle. Additionally, it achieves precise alignment with the phase response and exceeds baseline performance metrics. The generation of the impulse response is influenced by both device-specific parameters and additional variables that characterize different types of hardware audio effects. Moreover, perceptual tests affirm our objective results, highlighting the effectiveness of the proposed approach.        </div>
       </div>
     </div>
   </div>
@@ -127,8 +126,8 @@ Piano sound synthesis has been an active topic of research and development for s
   <h2 class="title is-3">Datasets</h2>
  </div>
           <div class="columns is-centered has-text-centered">
-<a href="https://zenodo.org/records/1213635"> BiViB Dataset  - </a>    
-<a href="https://doi.org/10.34740/kaggle/dsv/7035700"> - Preprocessed Dataset </a>
+<a href="https://zenodo.org/records/7044411"> Reverb Dataset  - </a>    
+<a href="https://zenodo.org/records/17119646"> - Filter Dataset </a>
                   </div>
     </div>
      </div>
@@ -140,8 +139,7 @@ Piano sound synthesis has been an active topic of research and development for s
     <div class="hero-body">
      <!-- Your audio here -->
        <h2 class="title is-3">  </h2>
-   <h2 class="title is-3">BiViB Dataset - Upright Piano</h2>
-      <p>Piano-specific model</p>
+   <h2 class="title is-3">Reverb Dataset</h2>
 <table align="left" id="myTable">
   <tr> 
             <th>Parameters</th> 
@@ -201,8 +199,7 @@ Piano sound synthesis has been an active topic of research and development for s
     <div class="hero-body">
      <!-- Your audio here -->
        <h2 class="title is-3">  </h2>
-   <h2 class="title is-3">BiViB Dataset - Upright Piano</h2>
-      <p>Scenratio T2: the model is trained with the recording with maximum velocity as input. The examples refer to a velocity of 23.</p>
+   <h2 class="title is-3">Filter Dataset</h2>
 <table align="left" id="myTable">
   <tr> 
             <th>Parameters</th> 
@@ -255,77 +252,14 @@ Piano sound synthesis has been an active topic of research and development for s
   </div>
  </section> 
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-     <!-- Your audio here -->
-       <h2 class="title is-3">  </h2>
-   <h2 class="title is-3">BiViB Dataset - Upright Piano</h2>
-    <p>Scenario T1: the model is trained with the recording with the lowest velocity as input. The examples refer to a velocity of 100.</p>
-<table align="left" id="myTable">
-  <tr> 
-            <th>Parameters</th> 
-            <th align="center" >Real</th> 
-            <th align="center" >Model</th> 
-    </tr> 
-<tr>
-     <td> <p>Key: A0</p>
-  <td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_A0_S6/WavPredictions/S_tar.wav" type="audio/wav"> </audio></td>
-<td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_A0_S6/WavPredictions/S_pred.wav" type="audio/wav"> </audio></td>
-</tr>
-<tr>
-     <td> <p>Key: B1</p>
-  <td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_B1_S6/WavPredictions/S_tar.wav" type="audio/wav"> </audio></td>
-<td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_B1_S6/WavPredictions/S_pred.wav" type="audio/wav"> </audio></td>
-</tr>
-<tr>
-     <td> <p>Key: C2</p>
-  <td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_C2_S6/WavPredictions/S_tar.wav" type="audio/wav"> </audio></td>
-<td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_C2_S6/WavPredictions/S_pred.wav" type="audio/wav"> </audio></td>
-</tr>
-<tr>
-     <td> <p>Key: D3</p>
-  <td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_D3_S6/WavPredictions/S_tar.wav" type="audio/wav"> </audio></td>
-<td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_D3_S6/WavPredictions/S_pred.wav" type="audio/wav"> </audio></td>
-</tr>
-<tr>
-     <td> <p>Key: E4</p>
-  <td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_E4_S6/WavPredictions/S_tar.wav" type="audio/wav"> </audio></td>
-<td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_E4_S6/WavPredictions/S_pred.wav" type="audio/wav"> </audio></td>
-</tr>
-<tr>
-     <td> <p>Key: F5</p>
-  <td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_F5_S6/WavPredictions/S_tar.wav" type="audio/wav"> </audio></td>
-<td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_F5_S6/WavPredictions/S_pred.wav" type="audio/wav"> </audio></td>
-</tr>
-<tr>
-     <td> <p>Key: G6</p>
-  <td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_G6_S6/WavPredictions/S_tar.wav" type="audio/wav"> </audio></td>
-<td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_G6_S6/WavPredictions/S_pred.wav" type="audio/wav"> </audio></td>
-</tr>
-<tr>
-     <td> <p>Key: A#7</p>
-  <td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_Ad7_S6/WavPredictions/S_tar.wav" type="audio/wav"> </audio></td>
-<td> <audio controls unmuted><source src="static/Filter_From_lower/DatasetSingleNoteFilter_Ad7_S6/WavPredictions/S_pred.wav" type="audio/wav"> </audio></td>
-</tr>
-  
-</table>
-    </div>
-  </div>
- </section> 
-  
+
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-@inproceedings{simionato_neuralpcm_2025,
-	author = {Simionato Riccardo and Fasciani Stefano},
-	title = {Neural Sampled-based Piano Synthesis},
-	booktitle = {Proceedings of the International Conference on Digital Audio Effects (DAFx25)},
-	year = {2025},
-    address = {Ancona, Italy},
-}</code></pre>
+
+</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
